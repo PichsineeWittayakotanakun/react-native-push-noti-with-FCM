@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "19618544579",
+    "project_id": "fir-softtoken",
+    "storage_bucket": "fir-softtoken.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:19618544579:android:57d54334b1aed2a652db76",
+        "android_client_info": {
+          "package_name": "com.fcmproject"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyA62fadJhNUEQhR0ULUWP4JT1aiyt-M8e8"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
