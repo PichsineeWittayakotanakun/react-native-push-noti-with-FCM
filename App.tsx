@@ -1,6 +1,4 @@
-
-
-import React, {  useEffect, useState } from 'react';
+import React, {  useEffect } from 'react';
 import messaging from '@react-native-firebase/messaging';
 import {Alert, PermissionsAndroid} from 'react-native';
 import { Linking, ActivityIndicator } from 'react-native';
@@ -92,20 +90,9 @@ const linking = {
 
 function App(): React.JSX.Element {
 
-  const [token, setToken] = useState<string>('');
-
-
   const requestUserPermission = async () => {
   PermissionsAndroid.request(PermissionsAndroid.PERMISSIONS.POST_NOTIFICATIONS);
-  // const authStatus = await messaging().requestPermission({
-  //   alert: true,
-  //   announcement: true,
-  //   badge: true,
-  //   carPlay: false,
-  //   criticalAlert: false,
-  //   provisional: false,
-  //   sound: true,
-  // });
+
   const authStatus = await messaging().requestPermission();
    const enabled =
      authStatus === messaging.AuthorizationStatus.AUTHORIZED ||
@@ -113,8 +100,7 @@ function App(): React.JSX.Element {
 
    if (enabled) {
      console.log('Authorization status:', authStatus);
-     const msgToken = await messaging().getToken();
-     setToken(msgToken)
+     const token = await messaging().getToken();
      console.log('FCM token:', token);
    }
  };
